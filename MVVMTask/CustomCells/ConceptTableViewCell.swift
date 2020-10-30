@@ -16,6 +16,7 @@ class ConceptTableViewCell: UITableViewCell {
     var rowsData : Row? {
         didSet {
             imageData.sd_setImage(with: URL(string: rowsData!.imageHref ?? ""), placeholderImage: UIImage(named: "placeholder.png"))
+            imageData.layer.cornerRadius = 5.0
             titleLbl.text = rowsData?.title
             descLbl.text = rowsData?.rowDescription
         }
@@ -23,13 +24,6 @@ class ConceptTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
 
 }
